@@ -1,15 +1,20 @@
 pkgbase = oomd-git
-	pkgdesc = A userspace out-of-memory killer
-	pkgver = 20190207
+	pkgdesc = A userspace out-of-memory killer (git build)
+	pkgver = v0.4.0.99.ga41962c
 	pkgrel = 1
 	url = https://github.com/facebookincubator/oomd
+	install = oomd-git.install
 	arch = x86_64
 	license = GPL2
+	checkdepends = gtest
+	checkdepends = gmock
 	makedepends = meson
 	makedepends = ninja
-	makedepends = git
-	makedepends = jsoncpp
 	depends = jsoncpp
+	optdepends = systemd-libs
+	provides = oomd
+	conflicts = oomd
+	backup = etc/oomd/oomd.json
 	source = oomd::git+https://github.com/facebookincubator/oomd.git
 	md5sums = SKIP
 
