@@ -3,7 +3,7 @@
 
 _pkgname=oomd
 pkgname=oomd-git
-pkgver=v0.4.0.99.ga41962c
+pkgver=v0.4.0.99.gc125935
 pkgrel=1
 pkgdesc='A userspace out-of-memory killer (git build)'
 arch=('x86_64')
@@ -44,5 +44,5 @@ check() {
 package() {
     cd $srcdir/$_pkgname
     DESTDIR=$pkgdir ninja -C build install
-    install -Dm644 $srcdir/oomd/src/oomd/etc/desktop.json $pkgdir/etc/desktop.json.example
+    install -Dm644 $srcdir/oomd/src/oomd/etc/desktop.json $pkgdir/etc/$_pkgname/oomd.json.example
 }
